@@ -164,7 +164,7 @@
             <h1>Neural Nektar AI-IN-A-CAN</h1>
             <p class="subtitle">Generative AI & Image Processing</p>
             <p class="intro">
-                This project explores the use of generative AI techniques to work with images, demonstrating practical applications of neural networks in creative image generation and manipulation. 
+                This project explores the use of generative AI techniques to work with images, demonstrating practical applications of neural networks in creative image generation and manipulation.
             </p>
         </header>
 
@@ -211,15 +211,15 @@
             <div class="content-section">
                 <h3>Approach</h3>
                 <p>
-                    For the “Using Generative AI to Work with Images” project, I chose to design a lighthearted concept: “AI in a can.” I created a fictional brand and product line named Neura[...]
+                    For the “Using Generative AI to Work with Images” project, I chose to design a lighthearted concept: “AI in a can.” I created a fictional brand and product line named [...]
                     
                     How I cleaned up the drawings in GIMP:
-"To clean up a hand drawn picture, start by converting the image to grayscale via Colors > Desaturate and then use Colors > Posterize (set to 2) or Colors > Threshold to remove faint pencil marks an[...]"
-Use the Eraser tool or Paintbrush on a new layer to manually fix specific blemishes, and apply Filters > Enhance > Antialias to smooth jagged edges.  For stubborn background noise or scanned artifacts[...]
+"To clean up a hand drawn picture, start by converting the image to grayscale via Colors > Desaturate and then use Colors > Posterize (set to 2) or Colors > Threshold to remove faint pencil marks[...]
+Use the Eraser tool or Paintbrush on a new layer to manually fix specific blemishes, and apply Filters > Enhance > Antialias to smooth jagged edges.  For stubborn background noise or scanned arti[...]
 
                     Small social media commercial made with https://pollo.ai/
 Prompt for commercial:
-"A high-end cinematic beverage commercial, vertical 9:16, ultra-realistic, macro detail, strong contrast lighting, smooth rhythmic transitions. Use the exact canned beverage product being advertised[...]
+"A high-end cinematic beverage commercial, vertical 9:16, ultra-realistic, macro detail, strong contrast lighting, smooth rhythmic transitions. Use the exact canned beverage product being adverti[...]
                 </p>
             </div>
         </section>
@@ -237,12 +237,12 @@ Prompt for commercial:
 •	Bottled Brainwave™ ("Pure Cognition, Zero Calories.")
 •	Prompt-in-a-Pint™ ("Liquid Logic on Tap.")(Faught very hard for 1st and 2nd)
                     2. Brand Strategy Framework
-Brand Mission: "To democratize artificial intelligence by taking it out of the cloud and putting it into aluminum. We believe world-class neural processing should be as portable, refreshing, and insta[...]"
+Brand Mission: "To democratize artificial intelligence by taking it out of the cloud and putting it into aluminum. We believe world-class neural processing should be as portable, refreshing, and [...]
 Target Audience
 •	Primary: Overworked students, frantic project managers, and late-night coders who need an instant second opinion or an extra set of digital hands.
 •	Demographic: Tech-literate Gen Z & Millennials who appreciate satire, sleek product design, and absurd efficiency.
 Unique Value Proposition (UVP)
-"Instant artificial intelligence with zero latency, zero cloud dependency, and a satisfying crack-of-the-can opening. Just open, pour near your device, and let the ambient liquid logic handle the rest[...]
+"Instant artificial intelligence with zero latency, zero cloud dependency, and a satisfying crack-of-the-can opening. Just open, pour near your device, and let the ambient liquid logic handle the[...]
                     3. "Why It's Necessary" (The Pitch)
 •	Zero-Cloud Latency: No Wi-Fi? No problem. Having AI in a physical liquid format means local processing power that goes wherever you go—subways, dead zones, or off-grid camping trips.
 •	Physical Portability: Cloud servers take up entire warehouses. Canned AI fits in a cupholder, backpack, or vending machine.
@@ -276,7 +276,7 @@ Creative Block - Take a quick whiff of the ozone-flavored vapor for an instant b
       <!-- 3D model (glTF/GLB) using model-viewer -->
       <div class="media-card">
         <model-viewer
-          src="https://github.com/BliptonJr/Bliptonjr.github.io/blob/main/Meshy_AI_Chip_the_Friendly_Rob_0807203020_generate.glb"
+          id="chipModelViewer"
           alt="3D model of Chip the mascot"
           camera-controls
           auto-rotate
@@ -295,7 +295,7 @@ Creative Block - Take a quick whiff of the ozone-flavored vapor for an instant b
       <div class="media-card">
         <img src="https://bliptonjr.github.io/CHIPthemascot.jpg" alt="3D preview">
         <div class="media-caption">
-          Model preview — <a href="https://github.com/BliptonJr/Bliptonjr.github.io/blob/main/Meshy_AI_Chip_the_Friendly_Rob_0807203020_generate.glb" target="_blank" rel="noopener">download GLB</a>
+          Model preview — <a id="downloadGLB" href="https://raw.githubusercontent.com/BliptonJr/Bliptonjr.github.io/main/Meshy_AI_Chip_the_Friendly_Rob_0807203020_generate.glb" target="_blank" rel="noopener">download GLB</a>
         </div>
       </div>
     </div>
@@ -310,8 +310,8 @@ Creative Block - Take a quick whiff of the ozone-flavored vapor for an instant b
             <div class="content-section">
                 <h3>In Conclusion</h3>
                 <p>
-                    While I worked meticulously with Gemini to help perfect my prompt engineering for the small social media commercial, I didn’t have much faith in a free text/image to video soluti[...]
-Overall, blending generative AI tools with traditional hand-drawn concepts allowed me to explore both the capabilities and current limitations of emerging design tech. While tools like Pollo.AI and Me[...]
+                    While I worked meticulously with Gemini to help perfect my prompt engineering for the small social media commercial, I didn’t have much faith in a free text/image to video s[...]
+Overall, blending generative AI tools with traditional hand-drawn concepts allowed me to explore both the capabilities and current limitations of emerging design tech. While tools like Pollo.AI a[...]
 
                  </p>
             </div>
@@ -322,6 +322,63 @@ Overall, blending generative AI tools with traditional hand-drawn concepts allow
             <p>&copy; 2026 | Introduction to Artificial Intelligence Portfolio</p>
         </footer>
     </div>
+
+<script>
+// Try multiple host URLs and log status/headers so you can see why the GLB wasn't loading.
+(async function(){
+  const modelViewer = document.getElementById('chipModelViewer');
+  if(!modelViewer) return console.warn('model-viewer element not found');
+
+  const candidateUrls = [
+    'https://bliptonjr.github.io/Meshy_AI_Chip_the_Friendly_Rob_0807203020_generate.glb',
+    'https://raw.githubusercontent.com/BliptonJr/Bliptonjr.github.io/main/Meshy_AI_Chip_the_Friendly_Rob_0807203020_generate.glb'
+  ];
+
+  for (const url of candidateUrls) {
+    try {
+      console.log('Checking GLB URL:', url);
+      // Try HEAD first (faster when supported)
+      let resp;
+      try {
+        resp = await fetch(url, { method: 'HEAD' });
+      } catch (err) {
+        console.warn('HEAD failed, trying GET for', url, err);
+        resp = await fetch(url, { method: 'GET' });
+      }
+
+      console.log('Status for', url, resp.status);
+      const ct = resp.headers.get('content-type') || '';
+      console.log('Content-Type for', url, ct);
+
+      if (resp.ok && (ct.includes('model/gltf-binary') || ct.includes('application/octet-stream') || ct.includes('model/gltf+json'))) {
+        modelViewer.src = url;
+        console.log('Loaded GLB from', url);
+        return;
+      }
+
+      // Some servers (oddly) return HTML or block HEAD; try a GET and inspect headers again
+      if (!resp.ok) {
+        console.warn('Not OK, trying GET for', url);
+        const getResp = await fetch(url, { method: 'GET' });
+        console.log('GET status', getResp.status, 'Content-Type', getResp.headers.get('content-type'));
+        if (getResp.ok && (getResp.headers.get('content-type')||'').includes('model/gltf-binary')) {
+          modelViewer.src = url;
+          console.log('Loaded GLB from', url);
+          return;
+        }
+      }
+
+    } catch (err) {
+      console.warn('Error while checking', url, err);
+    }
+  }
+
+  console.error('No working GLB URL found — check Network tab for the candidate URLs above.');
+  // ensure download link points at the raw URL (so users can still download)
+  const dl = document.getElementById('downloadGLB');
+  if (dl) dl.href = candidateUrls[1];
+})();
+</script>
 
 </body>
 </html>
